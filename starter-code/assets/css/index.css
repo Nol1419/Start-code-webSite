@@ -1,0 +1,183 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+    list-style: none;
+    text-decoration: none;
+
+    scroll-behavior: smooth;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    width: 100%;
+    background: url('../home/background-home-desktopAll.jpg');
+    /* background: url('../img/ai-generated-7813239_1920.jpg'); */
+    /* background: #000; */
+
+    background-repeat: no-repeat;
+    color: #fff;
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+    justify-content: center;
+    align-items: center;
+
+    z-index: -1;
+}
+
+img{
+    width: 100%;
+}
+
+/*
+    .header__body .content_rigth{
+    width: 60%;
+    min-width: 60%;
+    background-color: rgba(255, 255, 255, 0.045);
+    backdrop-filter: blur(90.5485px);
+    border-radius: 3px;
+    margin: 2rem auto;
+    padding: 2rem;
+    justify-content: center;
+}
+*/
+
+/*HEADER*/
+.header__body{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    /* margin: 1rem ; */
+}
+
+.line{
+    position: absolute;
+    left: 10%;
+    
+    width: 37%;
+    height: 1%;
+    
+    background-color: #fff;
+    z-index: 50;
+}
+
+.content_rigth{
+    background-color: transparent;
+}
+
+.content_rigth .navBars__list{
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.045);
+    backdrop-filter: blur(90.5px);
+
+    padding: 2rem 4rem;
+    margin-right: 17rem;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.content_rigth .navBars__list li{
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 200ms ease;
+}
+
+.content_rigth .navBars__list li:hover{
+    border-bottom: 2px solid #fff;
+}
+
+.content_rigth .navBars__list li a{
+    color: #fff;
+    transition: color 400ms ease;
+}
+
+.content_rigth .navBars__list li a:hover{
+    color: #15adff;
+}
+
+/* Main */
+.content__body{
+    width: 90%;
+}
+
+.content__body .content__main-article{
+    width: 100%;
+    padding: 10rem 3rem;
+    /* margin: 0 auto; */
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+.content__body .content__main-article .section__left{
+    width: 50%;
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 2rem;
+}
+
+.section__left span{
+    width: 100%;
+    letter-spacing: 12px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    
+}
+
+.section__left h2{
+    font-size: 11rem;
+}
+
+.section__left p{
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.content__body .content__main-article .section__rigth{
+    width: 40%;
+    height: 40%;
+}
+
+.section__rigth .section__btn{
+    cursor: pointer;
+    width: 440px;
+    height: 440px;
+    padding: 9rem 5rem;
+    outline: none;
+    border: none;
+
+    border-radius: 50%;
+    background-color: #fff;
+    color: #000;
+    /* backdrop-filter: blur(90.5px); */
+    font-size: 1.8rem;
+    transition: border 400ms ease;
+}
+
+.section__rigth .section__btn:hover{
+    border: 50px solid #000;
+    
+}
