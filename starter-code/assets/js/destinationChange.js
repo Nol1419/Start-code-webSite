@@ -3,7 +3,6 @@ console.log("Conected");
 // Contenido del Html -> preparado para enviar el fragment
 const contentArticle = document.querySelector(".article-section");
 const contentArticleBody = document.querySelector(".article-section__body");
-
 //change img
 const imgNew = document.getElementById("img");
 
@@ -21,9 +20,10 @@ const btnLinkTitan = document.getElementById("titan");
 // 1 step
 try {
   const getApiLocal = async () => {
-    console.log("hola");
+    // console.log("hola");
     const apiLocal = await fetch("./data.json");
     const result = await apiLocal.json();
+    console.log(result.destinations);
     return result.destinations;
   };
 
@@ -130,7 +130,6 @@ try {
       console.log(e);
     }
   });
-  
 } catch (e) {
   console.log(e);
 }

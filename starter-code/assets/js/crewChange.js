@@ -1,137 +1,83 @@
-console.log('CONECTED')
+console.log("CONECTED");
 
-const response = fetch('./data.json');
-const Createfragment  = new DocumentFragment();
+let URL = "./data.json";
 
-// const contentMainArticle = document.querySelector('.content__main-article')
-const contentArticle = document.querySelector('.article-section')
-const sectionLeft = document.querySelector('.section__left')
+const fragment = document.createDocumentFragment();
+const div = document.createElement("DIV");
+div.classList = "article-section"
 
-const nameCharacter = document.querySelector('.name')
-const paragraph = document.querySelector('.paragraph')
-const subTitle = document.querySelector('.sub_title')
-const btnCarrusel = document.querySelector('.carrusel')
+const contentMainArticle = document.querySelector(".content__main-article");
+const contentSection = document.querySelector(".article-section");
 
-//img
-const figure = document.querySelector('.section__right')
-const img = document.querySelector('.img')
+// btn change data HTML
+const commander = document.getElementById("commander");
+const engineer = document.getElementById("engineer");
+const pilot = document.getElementById("pilot");
+const specialist = document.getElementById("specialist");
 
-const commander = document.getElementById('commander')
-const engineer = document.getElementById('engineer')
-const pilot = document.getElementById('pilot')
-const specialist = document.getElementById('specialist')
+// get api.json
+const getDataJson = async (data) => {
+  const dataUrl = await fetch(data);
+  const response = await dataUrl.json();
+  return response.crew;
+};
 
-commander.addEventListener('click', () => {
-    response
-        .then(response => response.clone().json())
-        .then(response => getData(response.crew))
+// function see data html
+const seeData = async (data, posicion) => {
+  contentSection.innerHTML = "";
+  try {
+      let datos = await data;
+      datos = datos[posicion]
+      console.log(datos);
 
+      let sectionHtml = `
+          <div class="section__left">
+            <p class="sub_title">${datos.role}</p>
 
-    const getData = (data) => {
-        try {
-            let viweData = data[0]
-                
-            subTitle.innerHTML = viweData.role
-            nameCharacter.innerHTML = viweData.name
-            paragraph.innerHTML = viweData.bio
-            img.src = viweData.images.png
-            img.style.width =  '90%';
+            <h3 class="name">${datos.name}</h3>
 
-        } catch (e) {
-            console.log(e)
-        }
-        finally{
-            console.log('Exit')
-        }
+            <p class="paragraph">
+              ${datos.bio}
+            </p>
 
-    }
+          </div>
 
+          <figure class="section__right">
+            <figcaption class="content_img">
+              <img src="${datos.images.png}" alt="${datos.name}" class="img">
+
+            </figcaption>
+
+          </figure>
+      `;
+      div.innerHTML = sectionHtml;
+      fragment.appendChild(div);
+      contentSection.appendChild(fragment);
+    
+  } catch (e) {
+    // console.log(e);
+    contentSection.innerHTML = `Error en la carga de datos: ${e}`;
+  }
+};
+
+commander.addEventListener('click', (event) => {
+  event.preventDefault();
+  seeData(getDataJson(URL), 0);
 })
 
-engineer.addEventListener('click', () => {
-    response
-    .then(response => response.clone().json())
-    .then(response => Createfragment.append(
-        getData(response.crew)
-        ),
-        contentArticle.replaceChildren(
-            sectionLeft,
-            figure
-        )
-
-    )
-
-    const getData = (data) => {
-        try {
-            let viweData = data[1]
-                
-            subTitle.innerHTML = viweData.role
-            nameCharacter.innerHTML = viweData.name
-            paragraph.innerHTML = viweData.bio
-            img.src = viweData.images.png
-            img.style.width =  '80%';
-            
-
-        } catch (e) {
-                console.log(e)
-        }finally{
-            console.log('Exit')
-        }
-
-    }
-
+engineer.addEventListener('click', (event) => {
+  event.preventDefault();
+  seeData(getDataJson(URL), 1);
 })
 
-pilot.addEventListener('click', () => {
-    response
-        .then(response => response.clone().json())
-        .then(response => getData(response.crew))
-
-
-    const getData = (data) => {
-        try {
-            let viweData = data[2]
-                
-            subTitle.innerHTML = viweData.role
-            nameCharacter.innerHTML = viweData.name
-            paragraph.innerHTML = viweData.bio
-            img.src = viweData.images.png
-            img.style.width =  '100%';
-
-        } catch (e) {
-                console.log(e)
-        }
-        finally{
-            console.log('exit')
-        }
-
-    }
-
+pilot.addEventListener('click', (event) => {
+  event.preventDefault();
+  seeData(getDataJson(URL), 2);  
 })
 
-specialist.addEventListener('click', () => {
-    response
-        .then(response => response.clone().json())
-        .then(response => getData(response.crew))
-
-
-    const getData = (data) => {
-        try {
-            let viweData = data[3]
-                
-            subTitle.innerHTML = viweData.role
-            nameCharacter.innerHTML = viweData.name
-            paragraph.innerHTML = viweData.bio
-            img.src = viweData.images.png
-            img.style.width =  '100%';
-
-        } catch (e) {
-                console.log(e)
-        }
-        finally{
-            console.log('exit')
-        }
-
-    }
-
+specialist.addEventListener('click', (event) => {
+  event.preventDefault();
+  seeData(getDataJson(URL), 3);
 })
+
+window.addEventListener("load", seeData(getDataJson(URL), 0))
