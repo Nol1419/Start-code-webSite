@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <title>Space tourism website</title>
+
+  <!-- link box icons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
   <!-- link icon_shortcut -->
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/shared/logo.svg">
@@ -14,6 +18,7 @@
   <link rel="stylesheet" href="./assets/css/index.css">
 
 </head>
+
 <body>
 
   <header class="header__body">
@@ -22,10 +27,18 @@
         <img src="./assets/shared/logo.svg" alt="logo_Space_tourism_website">
       </figcaption>
     </figure>
-    
+
     <div class="line"></div>
 
-    <nav class="content_rigth navBars">
+    <div class="contentBtnNav">
+      <button type="button" id="btnMenu">
+        <i class='bx bx-menu' style='color:#ffffff'></i>
+        <!-- <i class='bx bx-x'></i> -->
+        </svg>
+      </button>
+    </div>
+
+    <nav class="content_rigth" id="content_rigth">
       <ul class="navBars__list">
         <li class="navBars__list-item"><a href="./index.html">00 Home</a></li>
         <li class="navBars__list-item"><a href="./destination.html">01 Destination</a></li>
@@ -42,10 +55,10 @@
         <span>So, you want to travel to</span>
 
         <h2>SPACE</h2>
-      
+
         <p>
-          Let’s face it; if you want to go to space, you might as well genuinely go to 
-          outer space and not hover kind of on the edge of it. Well sit back, and relax 
+          Let’s face it; if you want to go to space, you might as well genuinely go to
+          outer space and not hover kind of on the edge of it. Well sit back, and relax
           because we’ll give you a truly out of this world experience!
         </p>
 
@@ -59,5 +72,26 @@
 
   </main>
 
+
+  <script>
+    const contentRigth = document.getElementById("content_rigth");
+    const btnMenu = document.querySelector("button i");
+
+    btnMenu.addEventListener("click", (e) => {
+      if (btnMenu.classList.toggle("bx-x")) {
+        console.log("aaaa");
+        contentRigth.style.transitionDuration = "400ms";
+        contentRigth.style.right = "0";
+      } else {
+        console.log("bbbb");
+        contentRigth.style.transitionDuration = "400ms";
+        contentRigth.style.right = "-100rem";
+      }
+
+
+    })
+
+  </script>
 </body>
+
 </html>

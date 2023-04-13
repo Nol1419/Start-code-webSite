@@ -4,7 +4,7 @@ let URL = "./data.json";
 
 const fragment = document.createDocumentFragment();
 const div = document.createElement("DIV");
-div.classList = "article-section"
+div.classList = "article-section";
 
 const contentMainArticle = document.querySelector(".content__main-article");
 const contentSection = document.querySelector(".article-section");
@@ -26,11 +26,11 @@ const getDataJson = async (data) => {
 const seeData = async (data, posicion) => {
   contentSection.innerHTML = "";
   try {
-      let datos = await data;
-      datos = datos[posicion]
-      console.log(datos);
+    let datos = await data;
+    datos = datos[posicion];
+    console.log(datos);
 
-      let sectionHtml = `
+    let sectionHtml = `
           <div class="section__left">
             <p class="sub_title">${datos.role}</p>
 
@@ -50,34 +50,48 @@ const seeData = async (data, posicion) => {
 
           </figure>
       `;
-      div.innerHTML = sectionHtml;
-      fragment.appendChild(div);
-      contentSection.appendChild(fragment);
-    
+    div.innerHTML = sectionHtml;
+    fragment.appendChild(div);
+    contentSection.appendChild(fragment);
   } catch (e) {
     // console.log(e);
     contentSection.innerHTML = `Error en la carga de datos: ${e}`;
   }
 };
 
-commander.addEventListener('click', (event) => {
+commander.addEventListener("click", (event) => {
   event.preventDefault();
   seeData(getDataJson(URL), 0);
-})
+});
 
-engineer.addEventListener('click', (event) => {
+engineer.addEventListener("click", (event) => {
   event.preventDefault();
   seeData(getDataJson(URL), 1);
-})
+});
 
-pilot.addEventListener('click', (event) => {
+pilot.addEventListener("click", (event) => {
   event.preventDefault();
-  seeData(getDataJson(URL), 2);  
-})
+  seeData(getDataJson(URL), 2);
+});
 
-specialist.addEventListener('click', (event) => {
+specialist.addEventListener("click", (event) => {
   event.preventDefault();
   seeData(getDataJson(URL), 3);
-})
+});
 
-window.addEventListener("load", seeData(getDataJson(URL), 0))
+window.addEventListener("load", seeData(getDataJson(URL), 0));
+
+const contentRigth = document.getElementById("content_rigth");
+const btnMenu = document.querySelector("button i");
+
+btnMenu.addEventListener("click", (e) => {
+  if (btnMenu.classList.toggle("bx-x")) {
+    console.log("aaaa");
+    contentRigth.style.transitionDuration = "400ms";
+    contentRigth.style.right = "0";
+  } else {
+    console.log("bbbb");
+    contentRigth.style.transitionDuration = "400ms";
+    contentRigth.style.right = "-100rem";
+  }
+});

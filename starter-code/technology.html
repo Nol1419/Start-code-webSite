@@ -8,6 +8,9 @@
 
   <title>Space tourism website</title>
 
+  <!-- link box icons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
   <!-- link icon_shortcut -->
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/shared/logo.svg">
 
@@ -17,6 +20,7 @@
 
 <body>
   <!-- Header -->
+
   <header class="header__body">
     <figure class="content_left">
       <figcaption>
@@ -26,7 +30,15 @@
 
     <div class="line"></div>
 
-    <nav class="content_rigth navBars">
+    <div class="contentBtnNav">
+      <button type="button" id="btnMenu">
+        <i class='bx bx-menu' style='color:#ffffff'></i>
+        <!-- <i class='bx bx-x'></i> -->
+        </svg>
+      </button>
+    </div>
+
+    <nav class="content_rigth" id="content_rigth">
       <ul class="navBars__list">
         <li class="navBars__list-item"><a href="./index.html">00 Home</a></li>
         <li class="navBars__list-item"><a href="./destination.html">01 Destination</a></li>
@@ -41,18 +53,18 @@
     <article class="content__main-article">
       <div class="article-section__left-title">
         <h1><span>03</span> SPEACE LAUNCH 101</h1>
-        
+
       </div>
 
       <!-- data -->
-      <section class="article-section__right">   
+      <section class="article-section__right">
         <!-- left -->
         <div class="sectionLeft">
           <div class="constentBtn">
             <button type="button" class="btn" id="sectionRight__1">1</button>
             <button type="button" class="btn" id="sectionRight__2">2</button>
             <button type="button" class="btn" id="sectionRight__3">3</button>
-          
+
           </div>
 
         </div>
@@ -60,7 +72,7 @@
         <!-- right -->
         <div class="sectionRight" id="sectionRight">
           <div class="contentData" id="contentData">
-          
+
           </div>
         </div>
 

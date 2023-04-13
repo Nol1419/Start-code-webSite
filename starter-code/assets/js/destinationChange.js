@@ -133,3 +133,19 @@ try {
 } catch (e) {
   console.log(e);
 }
+
+const contentRigth = document.getElementById("content_rigth");
+    const btnMenu = document.querySelector("button i");
+
+    btnMenu.addEventListener("click", (e) => {
+      if (btnMenu.classList.toggle("bx-x")) {
+        console.log("aaaa");
+        contentRigth.style.transitionDuration = "400ms";
+        contentRigth.style.right = "0";
+      } else {
+        console.log("bbbb");
+        contentRigth.style.transitionDuration = "400ms";
+        contentRigth.style.right = "-100rem";
+      }
+
+})
