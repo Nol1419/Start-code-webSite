@@ -56,7 +56,8 @@ img {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  
+  padding-left: 5rem;
   /* margin: 1rem ; */
 }
 
@@ -120,7 +121,7 @@ img {
 
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 
   justify-content: center;
   align-items: center;
@@ -141,7 +142,7 @@ img {
 
 .section__left span {
   width: 100%;
-  letter-spacing: 12px;
+  letter-spacing: 7px;
   font-size: 1.5rem;
   font-weight: 400;
 }
@@ -180,4 +181,112 @@ img {
 .section__rigth .section__btn:hover {
   /* border: 50px solid #000; */
   outline: 50px solid rgb(186, 186, 186, 0.2);
+}
+
+/* DESKTOP 1040PX */
+@media screen and (max-width : 1040px) {
+  html{
+    font-size: 90%;
+  }
+
+  body{
+    object-fit: cover;
+    background-image: url('../home/background-home-desktop.jpg');
+  }
+
+  .header__body{
+    width: 90%;
+    justify-content: space-between;
+  }
+  
+  .line{
+    display: none;
+  }
+
+  .content_left{
+    padding-top: 1rem;
+  }
+
+  .content__body{
+    width: 90%;
+  }
+
+  .content__body .content__main-article {
+    width: 90%;
+  }
+
+  .section__left h2 {
+    font-size: 8rem;
+  }
+
+  .section__left p {
+    font-size: 1.8rem;
+  }
+
+  .section__rigth .section__btn {
+    cursor: pointer;
+    width: 290px;
+    height: 290px;
+    padding: 9rem 1rem;
+    
+  }
+
+}
+
+/* DESKTOP 1040PX */
+@media screen and (max-width : 800px) {
+
+  html{
+    font-size: 100%;
+  }
+
+  body{
+    height: 100%;
+    object-fit: cover;
+    background-image: url('../home/background-home-tablet.jpg');
+  }
+
+  /*
+  .header__body{
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .content__body{
+    width: 80%;
+  }
+
+  .content__body .content__main-article {
+    gap: 10rem;
+    
+    flex-direction: column;
+  }
+
+  .content__body .content__main-article .section__left {
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .section__left h2 {
+    font-size: 8rem;
+  }
+
+  .section__left p {
+    width: 80%;
+    font-size: 1.8rem;
+  }
+
+  .content__body .content__main-article .section__rigth {
+    text-align: center;
+    width: 100%;
+  }
+
+  .section__rigth .section__btn {
+    cursor: pointer;
+    width: 290px;
+    height: 290px;
+    
+  } */
+
 }

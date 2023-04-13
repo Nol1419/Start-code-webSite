@@ -28,21 +28,9 @@ body {
 }
 
 img {
+  object-fit: cover;
   width: 100%;
 }
-
-/*
-    .header__body .content_rigth{
-    width: 60%;
-    min-width: 60%;
-    background-color: rgba(255, 255, 255, 0.045);
-    backdrop-filter: blur(90.5485px);
-    border-radius: 3px;
-    margin: 2rem auto;
-    padding: 2rem;
-    justify-content: center;
-}
-*/
 
 /*HEADER*/
 .header__body {
@@ -108,8 +96,7 @@ img {
 /*MAIN*/
 
 .content__body {
-  width: 90%;
-  /* margin: 0; */
+  width: 100%;
 }
 
 .content__body .content__main-article {

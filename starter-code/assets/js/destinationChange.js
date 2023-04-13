@@ -3,6 +3,7 @@ console.log("Conected");
 // Contenido del Html -> preparado para enviar el fragment
 const contentArticle = document.querySelector(".article-section");
 const contentArticleBody = document.querySelector(".article-section__body");
+
 //change img
 const imgNew = document.getElementById("img");
 
@@ -23,7 +24,6 @@ try {
     // console.log("hola");
     const apiLocal = await fetch("./data.json");
     const result = await apiLocal.json();
-    console.log(result.destinations);
     return result.destinations;
   };
 
