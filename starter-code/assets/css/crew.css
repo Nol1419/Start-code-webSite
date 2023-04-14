@@ -45,7 +45,7 @@ img {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  /* padding: 1rem 2rem; */
   /* margin: 1rem ; */
 }
 
@@ -63,6 +63,10 @@ img {
 
   background-color: #fff;
   z-index: 50;
+}
+
+.content_left{
+  margin: 0 3rem ;
 }
 
 .content_rigth {
@@ -209,6 +213,66 @@ img {
   background-color: #fff;
 }
 
+/* DESKTOP 1040PX */
+@media screen and (max-width: 1040px) {
+  .line{
+    display: none;
+  }
+
+  .content__body {
+    width: 90%;  
+    padding: 5rem 1rem;
+    gap: 2rem;
+  }
+ 
+  .carrusel{
+    margin-left: 7rem;
+  } 
+
+}
+
+/* Tablet 800PX */
+@media screen and (max-width: 800px) {
+  .content_rigth .navBars__list {
+    margin-right: 4rem;
+  }
+  
+  .content__body {
+    width: 95%;
+  }
+
+  .article-section{
+    flex-direction: column;
+  }
+  
+  .content__main-article{
+    width: 100%;
+    text-align: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    gap: 2rem;
+  }
+
+  .content__main-article .article-section{
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .article-section .section__right{
+    display: block;
+    width: 100%;
+  }
+
+  .carrusel{
+    margin-left: 18rem;
+    padding-bottom: 3rem;
+  }
+
+}
+
 /* mobile */
 @media screen and (max-width: 700px) {
   .contentBtnNav {
@@ -249,4 +313,9 @@ img {
     gap: 2rem;
     font-size: 2rem;
   }
+
+  .carrusel{
+    margin-left: 14rem;
+  }
+
 }

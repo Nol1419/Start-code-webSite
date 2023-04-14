@@ -53,6 +53,7 @@ const seeData = async (data, posicion) => {
     contentData.innerHTML = itemHtml;
     fragment.appendChild(contentData);
     sectionRight.appendChild(fragment);
+
   } catch (e) {
     contentData.innerHTML = `Se ha detectado un error: ${e}`;
     fragment.appendChild(contentData);
@@ -81,11 +82,9 @@ const btnMenu = document.querySelector("button i");
 
 btnMenu.addEventListener("click", (e) => {
   if (btnMenu.classList.toggle("bx-x")) {
-    console.log("aaaa");
     contentRigth.style.transitionDuration = "400ms";
     contentRigth.style.right = "0";
   } else {
-    console.log("bbbb");
     contentRigth.style.transitionDuration = "400ms";
     contentRigth.style.right = "-100rem";
   }

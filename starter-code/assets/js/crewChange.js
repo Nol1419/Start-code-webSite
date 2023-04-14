@@ -28,7 +28,6 @@ const seeData = async (data, posicion) => {
   try {
     let datos = await data;
     datos = datos[posicion];
-    console.log(datos);
 
     let sectionHtml = `
           <div class="section__left">
@@ -86,11 +85,9 @@ const btnMenu = document.querySelector("button i");
 
 btnMenu.addEventListener("click", (e) => {
   if (btnMenu.classList.toggle("bx-x")) {
-    console.log("aaaa");
     contentRigth.style.transitionDuration = "400ms";
     contentRigth.style.right = "0";
   } else {
-    console.log("bbbb");
     contentRigth.style.transitionDuration = "400ms";
     contentRigth.style.right = "-100rem";
   }
